@@ -1,0 +1,28 @@
+name: validate-manifests
+
+on:
+  pull_request:
+  push:
+    branches:
+      - main
+
+jobs:
+  kustomize-build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Install kustomize
+        uses: imranism/setup-kustomize@v2
+        with:
+          # Keep roughly aligned with modern kubectl-embedded kustomize (5.7.x).
+          kustomize-version: v5.7.1
+
+      - name: kustomize build (clusters/dev, infrastructure, apps)
+        run: |
+          kustomize build clusters/dev >/dev/null
+          kustomize build infrastructure >/dev/null
+          kustomize build apps/kafka-dev >/dev/null
+
+      - name: Flux path sanity script
+        run: bash tests/scripts/check-flux-paths.sh
