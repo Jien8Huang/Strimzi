@@ -1,0 +1,16 @@
+node_modules/
+dist/
+.astro/
+
+# Local cluster / credentials
+*.kubeconfig
+kubeconfig
+.kube/
+
+# OS / editor
+.DS_Store
+.idea/
+.vscode/
+
+# Local agent run artifacts
+.context/
