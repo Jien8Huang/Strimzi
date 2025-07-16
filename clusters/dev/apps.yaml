@@ -1,0 +1,16 @@
+apiVersion: kustomize.toolkit.fluxcd.io/v1
+kind: Kustomization
+metadata:
+  name: apps
+  namespace: flux-system
+spec:
+  interval: 10m0s
+  path: ./apps/kafka-dev
+  prune: true
+  sourceRef:
+    kind: GitRepository
+    name: flux-system
+  timeout: 15m0s
+  wait: true
+  dependsOn:
+    - name: infrastructure
