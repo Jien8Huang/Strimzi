@@ -1,0 +1,26 @@
+apiVersion: helm.toolkit.fluxcd.io/v2beta2
+kind: HelmRelease
+metadata:
+  name: strimzi-kafka-operator
+  namespace: flux-system
+spec:
+  interval: 10m0s
+  chart:
+    spec:
+      chart: strimzi-kafka-operator
+      version: "0.44.0"
+      sourceRef:
+        kind: HelmRepository
+        name: strimzi
+        namespace: flux-system
+  install:
+    createNamespace: true
+    remediation:
+      retries: 3
+  upgrade:
+    remediation:
+      retries: 3
+  targetNamespace: strimzi-system
+  values:
+    # Matches Strimzi chart `values.yaml` for strimzi-kafka-operator 0.44.0
+    watchAnyNamespace: true
