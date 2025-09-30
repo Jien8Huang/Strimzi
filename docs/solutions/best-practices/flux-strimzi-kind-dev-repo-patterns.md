@@ -1,6 +1,5 @@
 ---
 title: "Flux + Strimzi on kind: repo layout, ordering, and review pitfalls"
-date: 2026-04-19
 category: best-practices
 module: kubernetes-gitops
 problem_type: best_practice
@@ -114,6 +113,6 @@ If `git` has **no commits** and all work is **untracked**, diff-based review aga
 
 ## Related
 
-- In-repo plan: `docs/plans/2026-04-19-002-feat-gitops-strimzi-cluster-repo-plan.md`
+- In-repo plan: `docs/plans/002-feat-gitops-strimzi-cluster-repo-plan.md`
 - Strimzi documentation: https://strimzi.io/documentation/
 - Flux documentation: https://fluxcd.io/flux/

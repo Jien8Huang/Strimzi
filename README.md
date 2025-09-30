@@ -21,7 +21,7 @@ Details live in `docs/bootstrap.md`. The ordering is:
 
 ## Documented learnings
 
-- `docs/solutions/best-practices/flux-strimzi-kind-dev-repo-patterns-2026-04-19.md` — Flux/Strimzi ordering, Helm value verification, and review pitfalls for this repo shape.
+- `docs/solutions/best-practices/flux-strimzi-kind-dev-repo-patterns.md` — Flux/Strimzi ordering, Helm value verification, and review pitfalls for this repo shape.
 
 ## References
 

@@ -2,7 +2,6 @@
 title: "feat: GitOps + Strimzi Kubernetes reference (non-portfolio)"
 type: feat
 status: active
-date: 2026-04-19
 origin: none
 ---
 
@@ -284,5 +283,5 @@ flowchart TB
 ## Sources & References
 
 - **Origin document:** none
-- Related prior plan (portfolio-era, may be superseded for product direction): `docs/plans/2026-04-19-001-feat-strimzi-portfolio-web-section-plan.md`
+- Related prior plan (portfolio-era, may be superseded for product direction): `docs/plans/001-feat-strimzi-portfolio-web-section-plan.md`
 - External docs: [Strimzi documentation](https://strimzi.io/documentation/), [Flux documentation](https://fluxcd.io/flux/)

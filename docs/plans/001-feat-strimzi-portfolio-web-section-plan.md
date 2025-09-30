@@ -2,7 +2,6 @@
 title: "feat: Strimzi portfolio web section (item 7)"
 type: feat
 status: active
-date: 2026-04-19
 origin: none
 ---
 
