@@ -13,7 +13,7 @@ jobs:
       - uses: actions/checkout@v4
 
       - name: Install kustomize
-        uses: imranism/setup-kustomize@v2
+        uses: imranismail/setup-kustomize@v3
         with:
           # Keep roughly aligned with modern kubectl-embedded kustomize (5.7.x).
           kustomize-version: v5.7.1
