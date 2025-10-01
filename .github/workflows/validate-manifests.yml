@@ -13,10 +13,14 @@ jobs:
       - uses: actions/checkout@v4
 
       - name: Install kustomize
-        uses: imranismail/setup-kustomize@v3
-        with:
-          # Keep roughly aligned with modern kubectl-embedded kustomize (5.7.x).
-          kustomize-version: v5.7.1
+        env:
+          KUSTOMIZE_VERSION: v5.7.1
+        run: |
+          set -euo pipefail
+          url="https://github.com/kubernetes-sigs/kustomize/releases/download/kustomize/${KUSTOMIZE_VERSION}/kustomize_${KUSTOMIZE_VERSION}_linux_amd64.tar.gz"
+          curl -fsSL "$url" -o /tmp/kustomize.tgz
+          sudo tar xzf /tmp/kustomize.tgz -C /usr/local/bin kustomize
+          kustomize version
 
       - name: kustomize build (clusters/dev, infrastructure, apps)
         run: |
